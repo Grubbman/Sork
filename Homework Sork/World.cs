@@ -16,7 +16,7 @@ namespace Homework_Sork
             slime.CurrentHP = 5;
             slime.GainedExperience = 15;
             slime.Attack = 3;
-            slime.Defence = 2;
+            slime.Defence = 5;
             slime.Agility = 5;
 
             var bridgeTroll = new Enemy();
@@ -25,7 +25,7 @@ namespace Homework_Sork
             bridgeTroll.CurrentHP = 15;
             bridgeTroll.GainedExperience = 45;
             bridgeTroll.Attack = 8;
-            bridgeTroll.Defence = 15;
+            bridgeTroll.Defence = 10;
             bridgeTroll.Agility = 5;
 
 

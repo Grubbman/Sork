@@ -9,13 +9,15 @@ namespace Homework_Sork
     public class Character
     {
 
+        
+
         public int CurrentHP { get; set; } = 95;
         public int MaxHP { get; set; } = 100;
         public int CurrentExperience { get; set; } = 10;
         public double FullExperience { get; set; } = 100;
         public int CurrentLevel { get; set; } = 1;
-        public int Attack { get; set; } = 5;
-        public int Defence { get; set; } = 1;
+        public int Attack { get; set; } = 10;
+        public int Defence { get; set; } = 10;
         public int Agility { get; set; } = 1;
         public int Sneak { get; set; } = 1;
 
@@ -64,6 +66,7 @@ namespace Homework_Sork
             }
         }
         
+       
 
         public string Status { get; set; } = "";
 

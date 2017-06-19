@@ -13,6 +13,9 @@ namespace Homework_Sork
         private object tickLock = new object();
         private Header header;
 
+        Random D20 = new Random();
+        Random D6 = new Random();
+
         public Game()
         {
             header = new Header();
@@ -47,13 +50,22 @@ namespace Homework_Sork
 
                 if (g.CurrentRoom.Enemy != null)
                 {
-                    g.Character.CurrentHP -= g.CurrentRoom.Enemy.Attack; // would like to make enemy attack devided my % that is character defience = total enemy dammage to char hp
-                    g.CurrentRoom.Enemy.CurrentHP -= g.Character.Attack; // need to make it so character attack is profession + weapon bonus = character attack % 
+                    var AttackHitRoll = D20.Next(1, 20);
+                    var DamageRoll = D6.Next(1, 6);
+                    if (  AttackHitRoll > g.Character.Defence)
+                    {
+                        g.Character.CurrentHP -= DamageRoll;
+                    }
+
+                    if ( AttackHitRoll > g.CurrentRoom.Enemy.Defence)
+                    {
+                        g.CurrentRoom.Enemy.CurrentHP -= DamageRoll;
+                    }
+
                     if (g.CurrentRoom.Enemy.CurrentHP <= 0)
                     {
 
                         g.CurrentRoom.Enemy = null;
-                        //Console.Clear(); breaks it so you can not go back
 
                     }
                     if (g.Character.CurrentHP <= 0)

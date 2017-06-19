@@ -60,7 +60,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
-    <Compile Include="Sam I Am.cs" />
     <Compile Include="Walk to the Castle.cs" />
     <Compile Include="Weapon.cs" />
     <Compile Include="World.cs" />

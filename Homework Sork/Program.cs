@@ -12,29 +12,10 @@ namespace Homework_Sork
     {
         static void Main(string[] args)
         {
-            //Stopwatch sw = new Stopwatch();
-            //sw.Start();
-            //while(true)
-            //{
-            //    System.Threading.SpinWait(100000);
-            //    if (sw.ElapsedMilliseconds > 5000)
-            //        break;
-            //}
-            //sw.Stop();
-
-            //Console.WriteLine("boo");
-            //Console.ReadLine();
-
-            // var battleBuddy = new CombatHelper();
-
+            
             var game = new Game();
             
-            //var enemy = new Enemy();
-            //var profession = new Profession();
-            //var battle = new Battle();
-
             
-
             if (game.Character.Name.ToUpper() == "OVERLORD")
             {
                 DumpTheGraph(game.CurrentRoom);
@@ -67,7 +48,7 @@ namespace Homework_Sork
             int SneakBonus = 0;
             //Strings:
             string CurrentCommand;
-            //randon
+            //random
             Random Diceroll = new Random();
             int dicerolled = Diceroll.Next(1, 3);
             //Arrays:
@@ -274,6 +255,7 @@ namespace Homework_Sork
          else { }
  } while (GameOver == 0);*/
         }
+        
 
 
         public static void DumpTheGraph(Room room)
