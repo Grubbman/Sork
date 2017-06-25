@@ -12,13 +12,13 @@ namespace Homework_Sork
         private System.Timers.Timer timer;
         private object tickLock = new object();
         private Header header;
-
-        Random D20 = new Random();
-        Random D6 = new Random();
+        private DiceBag diceBag;
+        
 
         public Game()
         {
             header = new Header();
+            diceBag = new DiceBag();
             Character = new Character();
             CurrentRoom = new World().Create();
 
@@ -50,14 +50,16 @@ namespace Homework_Sork
 
                 if (g.CurrentRoom.Enemy != null)
                 {
-                    var AttackHitRoll = D20.Next(1, 20);
-                    var DamageRoll = D6.Next(1, 6);
-                    if (  AttackHitRoll > g.Character.Defence)
+                    //run combat part
+                    var AttackRoll = diceBag.Roll(DiceBag.Dice.D20);
+                    var DodgeRoll = diceBag.Roll(DiceBag.Dice.D12);
+                    var DamageRoll = diceBag.Roll(DiceBag.Dice.D6);
+                    if ( AttackRoll + g.CurrentRoom.Enemy.Agility > DodgeRoll + g.Character.Agility)
                     {
                         g.Character.CurrentHP -= DamageRoll;
                     }
 
-                    if ( AttackHitRoll > g.CurrentRoom.Enemy.Defence)
+                    if ( AttackRoll + g.Character.Agility > DodgeRoll + g.CurrentRoom.Enemy.Agility)
                     {
                         g.CurrentRoom.Enemy.CurrentHP -= DamageRoll;
                     }

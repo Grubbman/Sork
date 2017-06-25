@@ -8,20 +8,54 @@ namespace Homework_Sork
 {
     class Combat
     {
-
-        public string Name { get; set; }
         public string ActionText { get; set; }
-        public Enemy Dammage { get; set; }
+        public Enemy Damage { get; set; }
         public List<string> Aliases { get; set; }
+        private DiceBag diceBag;
+        private Game game;
 
-
-        public bool IsCommand(string input)
+        public Combat()
         {
-            return input == this.Name.ToUpper() || (Aliases != null && Aliases.Contains(input.ToLower()));
+            diceBag = new DiceBag();
+            game = new Game();
+
+            var g = game;
+            
+            if (diceBag.EnemyAttackChance(DiceBag.Dice.D20) + g.CurrentRoom.Enemy.Attack > g.Character.Agility /*weapon bonus*/)
+            {
+                Console.SetCursorPosition(32, 3);
+                Console.WriteLine($"{g.CurrentRoom.Enemy.Name} is able to hit {g.Character.Name} {diceBag.EnemyAttackDamage(DiceBag.Dice.D6)}");
+                g.Character.CurrentHP -= diceBag.EnemyAttackDamage(DiceBag.Dice.D6);
+            }
+
+            if (diceBag.CharAttackChance(DiceBag.Dice.D20) > g.CurrentRoom.Enemy.Agility)
+            {
+                g.CurrentRoom.Enemy.CurrentHP -= diceBag.CharAttackDamage(DiceBag.Dice.D6);
+            }
         }
+
     }
 }
+/*      ref for cursor position
+    
+             Console.SetCursorPosition(17, 3);
+                Console.WriteLine("Enemy Name: {0}", enemy.Name);
+                Console.SetCursorPosition(47, 3);
+                Console.WriteLine("Enemy HP: {0}", enemy.CurrentHP.ToString().PadRight(5));
+                Console.SetCursorPosition(0, 4);
+                Console.WriteLine(" +--------------------------------------------------------------------------------------------------------------------+ ");
+                Console.SetCursorPosition(1, 3);
+                Console.WriteLine("|");
+                Console.SetCursorPosition(118, 3);
+                Console.WriteLine("|"); 
 
+    const int STARTING_LINE = 6;
+        const int MARGIN_LENGTH = 5;
+        const int COMMAND_LINE = 24;
+        const int COMMAND_LENGTH = 10;
+        public const int CURRENT_COMMAND_LINE = 28;
+        public const int CURRENT_COMMAND_LENGTH = 0;
+             */
 /*
 (CurrentCommand == "FIGHT")
     {

@@ -26,7 +26,7 @@ namespace Homework_Sork
             Console.SetCursorPosition(Console.WindowWidth / 2 - 2, Console.WindowHeight / 2 - 9);
             Console.Write("Thief");
             Console.SetCursorPosition(Console.WindowWidth / 2 - 2, Console.WindowHeight / 2 - 1);
-            character.Profession = Console.ReadLine();
+            character.Profession = Console.ReadLine().ToUpper();
             Console.Clear();
         }
     }

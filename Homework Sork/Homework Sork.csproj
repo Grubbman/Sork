@@ -49,6 +49,7 @@
     <Compile Include="Combat.cs" />
     <Compile Include="CombatHelper.cs" />
     <Compile Include="ConsoleHelper.cs" />
+    <Compile Include="DiceBag.cs" />
     <Compile Include="Exit.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Header.cs" />

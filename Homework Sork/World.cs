@@ -10,12 +10,22 @@ namespace Homework_Sork
     {
         public Room Create()
         {
+            // Enemy List
+            //var = new Enemy();
+            //.Name = " ";
+            //.Description = " ";
+            //.CurrentHP = 0;
+            //.GainedExperience = 0;
+            //.Attack = 0;
+            //.Defence = 0;
+            //.Agility = 0;
+
             var slime = new Enemy();
             slime.Name = "slime";
             slime.Description = "Glob of living ozze.";
             slime.CurrentHP = 5;
             slime.GainedExperience = 15;
-            slime.Attack = 3;
+            slime.Attack = 6;
             slime.Defence = 5;
             slime.Agility = 5;
 
@@ -27,6 +37,41 @@ namespace Homework_Sork
             bridgeTroll.Attack = 8;
             bridgeTroll.Defence = 10;
             bridgeTroll.Agility = 5;
+
+            // Weapon List
+            //var = new Weapon();
+            //.Name = " ";
+            //.Description = " ";
+            //.AttackDescription = " ";
+            //.LevelRequirment = 1;
+            //.Durability = 100;
+            //.AttackBonus = 0;
+            //.DefenceBonus = 0;
+            //.AgilityBonus = 0;
+            //.SneakBonus = 0;
+            var fist = new Weapon();
+            fist.Name = "Fists";
+            fist.Description = "Your hands";
+            fist.AttackDescription = "A jab with the left followed by a uppercut with the right ";
+            fist.LevelRequirment = 1;
+            fist.Durability = 100;
+            fist.AttackBonus = 0;
+            fist.DefenceBonus = 0;
+            fist.AgilityBonus = 0;
+            fist.SneakBonus = 0;
+
+            var stick = new Weapon();
+            stick.Name = "Stick";
+            stick.Description = "Piece of wood from a tree";
+            stick.AttackDescription = "Swinging the stick ";
+            stick.LevelRequirment = 1;
+            stick.Durability = 100;
+            stick.AttackBonus = 1;
+            stick.DefenceBonus = 1;
+            stick.AgilityBonus = 0;
+            stick.SneakBonus = 0;
+
+
 
 
             // Create All Your Rooms

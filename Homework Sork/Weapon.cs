@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace Homework_Sork
 {
-    class Weapon
+    public class Weapon
     {
-        public int AttackBonus = 0;
-        public int DefenceBonus = 0;
-        public int AgilityBonus = 0;
-        public int SneakBonus = 0;
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string AttackDescription { get; set; }
+        public int Durability { get; set; }
+        public int LevelRequirment { get; set; }
 
-        public string AttackDescription;
-        public string Description;
-        public int Durability;
-        public int LevelRequirment;
-
-        
-
+        public int AttackBonus { get; set; } = 0;
+        public int DefenceBonus { get; set; } = 0;
+        public int AgilityBonus { get; set; } = 0;
+        public int SneakBonus { get; set; } = 0;
     }
 }
