@@ -23,6 +23,7 @@ namespace Homework_Sork
             var slime = new Enemy();
             slime.Name = "slime";
             slime.Description = "Glob of living ozze.";
+            slime.AttackDescription = "lunging forward it shoots pieces of itself at you that besolves what it touches";
             slime.CurrentHP = 5;
             slime.GainedExperience = 15;
             slime.Attack = 6;
@@ -91,7 +92,7 @@ namespace Homework_Sork
             middlebridgeRoom.Name = "Middle Bridge";
             middlebridgeRoom.Description = "On the bridge over the river.";
             middlebridgeRoom.Enemy = bridgeTroll;
-            middlebridgeRoom.EnemyIntro = "A large hand grabes the railing and a creature swings over the railing from below. Standing before you is a troll stopping you more with his stiench then his body. Blocking your way he demands a fee to use his bridge. Knowing you do not have anything to give the troll you must find another way.";
+            //middlebridgeRoom.EnemyIntro = "A large hand grabes the railing and a creature swings over the railing from below. Standing before you is a troll stopping you more with his stiench then his body. Blocking your way he demands a fee to use his bridge. Knowing you do not have anything to give the troll you must find another way.";
 
             var backbridgeRoom = new Room();
             backbridgeRoom.Name = "End Bridge";
@@ -196,6 +197,7 @@ namespace Homework_Sork
             crossToMiddleBridge.Destination = middlebridgeRoom;
             crossToMiddleBridge.Name = "cross";
             crossToMiddleBridge.OnTravel = "With the first few steps forward you come to the center of the bridge with the river below.";
+            crossToMiddleBridge.EnemyIntro = "A large hand grabes the railing and a creature swings over the railing from below. Standing before you is a troll stopping you more with his stiench then his body.";
             crossToMiddleBridge.Aliases = new List<string>
             {
                 "c","cr","cro","cros"

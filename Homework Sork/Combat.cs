@@ -23,8 +23,8 @@ namespace Homework_Sork
             
             if (diceBag.EnemyAttackChance(DiceBag.Dice.D20) + g.CurrentRoom.Enemy.Attack > g.Character.Agility /*weapon bonus*/)
             {
-                Console.SetCursorPosition(32, 3);
-                Console.WriteLine($"{g.CurrentRoom.Enemy.Name} is able to hit {g.Character.Name} {diceBag.EnemyAttackDamage(DiceBag.Dice.D6)}");
+                Console.SetCursorPosition(32, 5);
+                Console.WriteLine($"{g.CurrentRoom.Enemy.Name} {g.CurrentRoom.Enemy.AttackDescription} {g.Character.Name}");
                 g.Character.CurrentHP -= diceBag.EnemyAttackDamage(DiceBag.Dice.D6);
             }
 
@@ -49,7 +49,7 @@ namespace Homework_Sork
                 Console.SetCursorPosition(118, 3);
                 Console.WriteLine("|"); 
 
-    const int STARTING_LINE = 6;
+        const int STARTING_LINE = 6;
         const int MARGIN_LENGTH = 5;
         const int COMMAND_LINE = 24;
         const int COMMAND_LENGTH = 10;

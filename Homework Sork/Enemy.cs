@@ -13,6 +13,7 @@ namespace Homework_Sork
 
         public string Name { get; set; }
         public string Description { get; set; }
+        public string AttackDescription { get; set; }
         public int CurrentHP { get; set; } = 1;
         public int GainedExperience { get; set; }
         public int Attack { get; set; } = 1;

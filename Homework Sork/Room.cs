@@ -22,6 +22,7 @@ namespace Homework_Sork
             var header = new Header();
             var battle = new Battle();
             var battleBuddy = new CombatHelper();
+            var enemy = new Enemy();
 
             helper.WriteMultipleLines(this.Description);
             header.Print(game.Character, Enemy);
@@ -36,7 +37,19 @@ namespace Homework_Sork
 
             foreach (var exit in this.Exits)
             {
-                if (exit.IsCommand(currentCommand))
+                if (exit.EnemyIntro != null && exit.IsCommand(currentCommand))
+                {
+                    Console.SetCursorPosition(6, 20);
+                    Console.WriteLine(exit.EnemyIntro);
+                    var numberOfWords = exit.EnemyIntro.Split(' ').GetUpperBound(0) + 1;
+                    var wordsPerSecond = .20;
+                    game.StopTimerTick();
+                    System.Threading.Thread.Sleep((int)Math.Round(numberOfWords * wordsPerSecond * 500 /* ms per sec */));
+                    game.StartTimerTick();
+
+                    return exit.Destination;
+                }
+                if (exit.EnemyIntro == null && exit.IsCommand(currentCommand))
                 {
                     Console.SetCursorPosition(6, 20);
                     Console.WriteLine(exit.OnTravel);
@@ -45,8 +58,9 @@ namespace Homework_Sork
                     game.StopTimerTick();
                     System.Threading.Thread.Sleep((int)Math.Round(numberOfWords * wordsPerSecond * 500 /* ms per sec */));
                     game.StartTimerTick();
+
                     return exit.Destination;
-                }         
+                }
             }
 
             return this;
