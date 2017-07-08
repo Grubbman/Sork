@@ -16,21 +16,22 @@ namespace Homework_Sork
 
         public Combat()
         {
-            diceBag = new DiceBag();
+            diceBag = new DiceBag(game);
             game = new Game();
 
             var g = game;
-            
-            if (diceBag.EnemyAttackChance(DiceBag.Dice.D20) + g.CurrentRoom.Enemy.Attack > g.Character.Agility /*weapon bonus*/)
+
+
+            if (diceBag.EnemyAttackChanceRoll() > diceBag.CharDodgeRoll())
             {
                 Console.SetCursorPosition(32, 5);
                 Console.WriteLine($"{g.CurrentRoom.Enemy.Name} {g.CurrentRoom.Enemy.AttackDescription} {g.Character.Name}");
-                g.Character.CurrentHP -= diceBag.EnemyAttackDamage(DiceBag.Dice.D6);
+                g.Character.CurrentHP -= diceBag.EnemyAttackDamage();
             }
 
-            if (diceBag.CharAttackChance(DiceBag.Dice.D20) > g.CurrentRoom.Enemy.Agility)
+            if (diceBag.CharAttackChance() > diceBag.EnemyDodgeRoll())
             {
-                g.CurrentRoom.Enemy.CurrentHP -= diceBag.CharAttackDamage(DiceBag.Dice.D6);
+                g.CurrentRoom.Enemy.CurrentHP -= diceBag.CharAttackDamage();
             }
         }
 

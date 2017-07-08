@@ -18,9 +18,9 @@ namespace Homework_Sork
         public Game()
         {
             header = new Header();
-            diceBag = new DiceBag();
             Character = new Character();
             CurrentRoom = new World().Create();
+            diceBag = new DiceBag(this);
 
             new CharacterBuilder().CreateCharacter(this.Character);
 
@@ -51,23 +51,21 @@ namespace Homework_Sork
                 if (g.CurrentRoom.Enemy != null)
                 {
                     //run combat part
-                    var AttackRoll = diceBag.Roll(DiceBag.Dice.D20);
-                    var DodgeRoll = diceBag.Roll(DiceBag.Dice.D12);
-                    var DamageRoll = diceBag.Roll(DiceBag.Dice.D6);
-                    if ( AttackRoll + g.CurrentRoom.Enemy.Agility > DodgeRoll + g.Character.Agility)
+                    if (diceBag.EnemyAttackChanceRoll() > diceBag.CharDodgeRoll())
                     {
-                        g.Character.CurrentHP -= DamageRoll;
+                        g.Character.CurrentHP -= diceBag.EnemyAttackDamage();
                     }
 
-                    if ( AttackRoll + g.Character.Agility > DodgeRoll + g.CurrentRoom.Enemy.Agility)
+                    if (diceBag.CharAttackChance() > diceBag.EnemyDodgeRoll())
                     {
-                        g.CurrentRoom.Enemy.CurrentHP -= DamageRoll;
+                        g.CurrentRoom.Enemy.CurrentHP -= diceBag.CharAttackDamage();
                     }
 
                     if (g.CurrentRoom.Enemy.CurrentHP <= 0)
                     {
 
                         g.CurrentRoom.Enemy = null;
+                        g.CurrentRoom.EnemyIntro = null;
 
                     }
                     if (g.Character.CurrentHP <= 0)

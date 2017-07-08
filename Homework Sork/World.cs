@@ -10,7 +10,7 @@ namespace Homework_Sork
     {
         public Room Create()
         {
-            // Enemy List
+            //     Enemy List
             //var = new Enemy();
             //.Name = " ";
             //.Description = " ";
@@ -39,7 +39,42 @@ namespace Homework_Sork
             bridgeTroll.Defence = 10;
             bridgeTroll.Agility = 5;
 
-            // Weapon List
+            //      Item List
+            //var = new Item();
+            //.Name = " ";
+            //.Description = " ";
+            //.UseDescription = " ";
+            //.Weight = 0;
+            //.StackMax = 0;
+            //.Duration = 0;
+            //.AttackBuff = 0;
+            //.DefenceBuff = 0;
+            //.AgilityBuff = 0;
+            //.SneakBuff = 0;
+            //.HPBuff = 0;
+            //.Healing = 0;
+            //.CraftRequirements = new List<Craft>
+            //{
+            //    ,
+            //};
+
+            var stick = new Item();
+            .Name = " ";
+            .Description = " ";
+            .UseDescription = " ";
+            .Weight = 0;
+            .StackMax = 0;
+            .Duration = 0;
+            .AttackBuff = 0;
+            .DefenceBuff = 0;
+            .AgilityBuff = 0;
+            .SneakBuff = 0;
+            .HPBuff = 0;
+            .Healing = 0;
+
+
+
+            //      Weapon List
             //var = new Weapon();
             //.Name = " ";
             //.Description = " ";
@@ -50,6 +85,7 @@ namespace Homework_Sork
             //.DefenceBonus = 0;
             //.AgilityBonus = 0;
             //.SneakBonus = 0;
+
             var fist = new Weapon();
             fist.Name = "Fists";
             fist.Description = "Your hands";
@@ -61,16 +97,16 @@ namespace Homework_Sork
             fist.AgilityBonus = 0;
             fist.SneakBonus = 0;
 
-            var stick = new Weapon();
-            stick.Name = "Stick";
-            stick.Description = "Piece of wood from a tree";
-            stick.AttackDescription = "Swinging the stick ";
-            stick.LevelRequirment = 1;
-            stick.Durability = 100;
-            stick.AttackBonus = 1;
-            stick.DefenceBonus = 1;
-            stick.AgilityBonus = 0;
-            stick.SneakBonus = 0;
+            var woodenClub = new Weapon();
+            woodenClub.Name = "Wooden Club";
+            woodenClub.Description = "Piece of wood from a tree";
+            woodenClub.AttackDescription = "Swinging the Club ";
+            woodenClub.LevelRequirment = 1;
+            woodenClub.Durability = 100;
+            woodenClub.AttackBonus = 1;
+            woodenClub.DefenceBonus = 1;
+            woodenClub.AgilityBonus = 0;
+            woodenClub.SneakBonus = 0;
 
 
 
