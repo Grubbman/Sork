@@ -43,11 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Armor.cs" />
     <Compile Include="Battle.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterBuilder.cs" />
     <Compile Include="Combat.cs" />
-    <Compile Include="CombatHelper.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="ConsoleHelper.cs" />
     <Compile Include="DiceBag.cs" />
     <Compile Include="Exit.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Header.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="LevelingSystem.cs" />
     <Compile Include="PlayerStatus.cs" />
     <Compile Include="Profession.cs" />

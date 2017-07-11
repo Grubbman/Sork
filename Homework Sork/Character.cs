@@ -18,11 +18,16 @@ namespace Homework_Sork
         public int Agility { get; set; } = 1;
         public int Sneak { get; set; } = 1;
 
+        public Item Item { get; set; }
+        public List<Item> Items { get; set; } = new List<Item>();
+
+
 
         public int TickCount { get; set; } = 0;
 
         public string Name { get; set; } = "";
         public string EquippedWeapon { get; set; } = "Fists";
+        public string EquippedArmor { get; set; }
 
         private string profession;
         public string Profession
@@ -65,9 +70,8 @@ namespace Homework_Sork
             }
         }
         
-       
 
-        public string Status { get; set; } = "";
+    public string Status { get; set; } = "";
     }
 
     

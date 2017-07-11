@@ -31,6 +31,8 @@ namespace Homework_Sork
 
         public Character Character { get; set; }
         public Room CurrentRoom { get; set; }
+        public List<Command> GlobalCommands { get; set; } = new List<Command>();
+
 
         public void StartTimerTick()
         {

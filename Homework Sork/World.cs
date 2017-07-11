@@ -58,20 +58,28 @@ namespace Homework_Sork
             //    ,
             //};
 
-            var stick = new Item();
-            .Name = " ";
-            .Description = " ";
-            .UseDescription = " ";
-            .Weight = 0;
-            .StackMax = 0;
-            .Duration = 0;
-            .AttackBuff = 0;
-            .DefenceBuff = 0;
-            .AgilityBuff = 0;
-            .SneakBuff = 0;
-            .HPBuff = 0;
-            .Healing = 0;
+            var rock = new Item();
+            rock.Name = "Rock";
+            
 
+            var stick = new Item();
+            stick.Name = "Stick";
+            
+
+            var redHerb = new Item();
+            redHerb.Name = "Red Herb";
+            
+
+            var blueHerb = new Item();
+            blueHerb.Name = "Blue Herb";
+            
+
+            var greenHerb = new Item();
+            greenHerb.Name = "Green Herb";
+            
+            
+            var blackMushroom = new Item();
+            blackMushroom.Name = "Black Mushroom";
 
 
             //      Weapon List
@@ -109,26 +117,34 @@ namespace Homework_Sork
             woodenClub.SneakBonus = 0;
 
 
-
-
             // Create All Your Rooms
             var startRoom = new Room();
             startRoom.Name = "Stony River Shore";
             startRoom.Description = "Awakened by an ominous RAWR, the adventurer sits up to discover themself on a riverbank below a cliff. Evaluating themself, finds that they have no items on them and only dressed in common cloths. Hearing another Rawr, the person looks up to see a wall atop the cliff. With that sight a pain sparks alight in there head, with a flash of memory. Remembering standing with companions fighting together, then the feeling of falling. Recovering from the pain and feeling the lump on there head, the adventurer stands up to continue forward. With a desire to find the companions and regain the memorys from before waking on the riverbank.";
+            startRoom.Items = new List<Item>
+            {
+                rock, redHerb
+            };
 
             var woodbankRoom = new Room();
             woodbankRoom.Name = "Wooded River Bank";
             woodbankRoom.Description = "Walking for a little while you stop along a tree line part of the riverbank. Looking at the river water you think to yourself the current does not seem as strong.";
+            woodbankRoom.Items = new List<Item>
+            {
+                stick, greenHerb
+            };
 
             var frontbridgeRoom = new Room();
             frontbridgeRoom.Name = "Front Bridge";
             frontbridgeRoom.Description = "Standing on a path looking ahead you see the old stone bridge before you. It looks solid enough as it streaches out across the river.";
+            frontbridgeRoom.Item = greenHerb;
 
             var middlebridgeRoom = new Room();
             middlebridgeRoom.Name = "Middle Bridge";
             middlebridgeRoom.Description = "On the bridge over the river.";
+            middlebridgeRoom.Item = blueHerb;
             middlebridgeRoom.Enemy = bridgeTroll;
-            //middlebridgeRoom.EnemyIntro = "A large hand grabes the railing and a creature swings over the railing from below. Standing before you is a troll stopping you more with his stiench then his body. Blocking your way he demands a fee to use his bridge. Knowing you do not have anything to give the troll you must find another way.";
+            
 
             var backbridgeRoom = new Room();
             backbridgeRoom.Name = "End Bridge";
@@ -137,6 +153,7 @@ namespace Homework_Sork
             var underbridgeRoom = new Room();
             underbridgeRoom.Name = "Below the Bridge.";
             underbridgeRoom.Description = "In the dank and drerry shadow of the bridge, you cling to a support as your eyes adjust.";
+            underbridgeRoom.Item = blackMushroom;
 
             var trollRoom = new Room();
             trollRoom.Name = "Where the troll lived under the bridge.";
@@ -170,7 +187,7 @@ namespace Homework_Sork
             swimExit.OnTravel = "You attempt to start to swim acoss but the current overwelm you as you go under swallowed by the dark waters.";
             swimExit.Aliases = new List<string>
             {
-                "s","sw","swi"
+                "sw","swi"
             };
 
             var forestGroveExit = new Exit();
@@ -401,7 +418,7 @@ namespace Homework_Sork
             {
                 backToForkPath, walkToFrontGate
             };
-
+            
 
             return startRoom;
         }

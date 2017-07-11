@@ -8,7 +8,10 @@ namespace Homework_Sork
 {
     class Inventory
     {
-        /*
+        
+    }
+}
+/*
         CurrentCommand = Console.ReadLine().ToUpper();
                 if (CurrentCommand == "INVENTORY" || CurrentCommand == "INV")
                 {
@@ -25,6 +28,4 @@ namespace Homework_Sork
                         else { }
                     }
                 }
-                */
-    }
-}
+*/

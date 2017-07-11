@@ -14,6 +14,11 @@ namespace Homework_Sork
         public string EnemyIntro { get; set; }
         public Enemy Enemy { get; set; }
         public List<Exit> Exits { get; set; }
+        public Item Item { get; set; }
+        public List<Item> Items { get; set; } = new List<Item>();
+
+
+
         
 
         public Room Display(Game game)
@@ -21,11 +26,21 @@ namespace Homework_Sork
             var helper = new ConsoleHelper();
             var header = new Header();
             var battle = new Battle();
-            var battleBuddy = new CombatHelper();
             var enemy = new Enemy();
+            var inventory = new Inventory();
 
             helper.WriteMultipleLines(this.Description);
             header.Print(game.Character, Enemy);
+
+            var items = new List<string>();
+            foreach (var item in this.Items)
+            {
+                items.Add(item.Name);
+            }
+
+            helper.WriteItems(items.ToArray());
+
+
 
             var exits = new List<string>();
             foreach (var exit in this.Exits)
@@ -33,7 +48,9 @@ namespace Homework_Sork
                 exits.Add(exit.Name);
             }
 
-            var currentCommand = helper.WriteCommands(exits.ToArray());
+            helper.WriteCommands(exits.ToArray());
+
+            var currentCommand = helper.ReadInput();
 
             foreach (var exit in this.Exits)
             {

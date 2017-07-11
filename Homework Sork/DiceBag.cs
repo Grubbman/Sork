@@ -163,7 +163,8 @@ namespace Homework_Sork
           
           public int EnemyAttackDamage()
           {
-            return Roll(Dice.D6) + game.CurrentRoom.Enemy.Attack - game.Character.Defence;
+            var damage = Roll(Dice.D10) + game.CurrentRoom.Enemy.Attack - game.Character.Defence;
+            return damage > 0 ? damage : 0;
           }
 
         public int CharAttackChance()
@@ -178,7 +179,7 @@ namespace Homework_Sork
 
         public int CharAttackDamage()
         {
-            return Roll(Dice.D6) + game.Character.Attack - game.CurrentRoom.Enemy.Defence;
+            return Roll(Dice.D10) + game.Character.Attack - game.CurrentRoom.Enemy.Defence;
         }
 
 
